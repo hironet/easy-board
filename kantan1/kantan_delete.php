@@ -7,7 +7,7 @@
 </head>
 <body>
 <?php
-$s = new PDO("mysql:host=dev-db;dbname=easy-board", "root", "root");
+$s = new PDO("mysql:host=dev-db;dbname=easy-board;charset=utf8", "root", "root");
 $b1_d = $_POST["b1"];
 $s->query("DELETE FROM tbk WHERE bang=$b1_d");
 $re = $s->query("SELECT * FROM tbk ORDER BY bang");

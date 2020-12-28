@@ -7,7 +7,7 @@
 </head>
 <body>
 <?php
-$s = new PDO("mysql:host=dev-db;dbname=easy-board", "root", "root");
+$s = new PDO("mysql:host=dev-db;dbname=easy-board;charset=utf8", "root", "root");
 $c1_d = $_POST["c1"];
 $re = $s->query("SELECT * FROM tbk WHERE mess LIKE '%$c1_d%'");
 while ($kekka = $re->fetch()) {

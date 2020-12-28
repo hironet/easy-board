@@ -7,7 +7,7 @@
 </head>
 <body>
 <?php
-$s = new PDO("mysql:host=dev-db;dbname=easy-board", "root", "root");
+$s = new PDO("mysql:host=dev-db;dbname=easy-board;charset=utf8", "root", "root");
 $a1_d = $_POST["a1"];
 $a2_d = $_POST["a2"];
 $s->query("INSERT INTO tbk (nama, mess) VALUE ('$a1_d', '$a2_d')");
