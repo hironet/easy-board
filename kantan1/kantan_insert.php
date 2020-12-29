@@ -9,8 +9,8 @@
 <?php
 require_once("data/db_info.php");
 $s = new PDO("mysql:host=$SERV;dbname=$DBNM;charset=utf8", $USER, $PASS);
-$a1_d = $_POST["a1"];
-$a2_d = $_POST["a2"];
+$a1_d = htmlspecialchars($_POST["a1"]);
+$a2_d = htmlspecialchars($_POST["a2"]);
 $s->query("INSERT INTO tbk (nama, mess) VALUE ('$a1_d', '$a2_d')");
 $re = $s->query("SELECT * FROM tbk ORDER BY bang");
 while ($kekka = $re->fetch()) {

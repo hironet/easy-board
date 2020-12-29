@@ -15,8 +15,8 @@ switch ("$h_d") {
     $re = $s->query("SELECT * FROM tbk ORDER BY bang");
     break;
   case "ins":
-    $a1_d = $_POST["a1"];
-    $a2_d = $_POST["a2"];
+    $a1_d = htmlspecialchars($_POST["a1"]);
+    $a2_d = htmlspecialchars($_POST["a2"]);
     $s->query("INSERT INTO tbk (nama, mess) VALUES ('$a1_d', '$a2_d')");
     $re = $s->query("SELECT * FROM tbk ORDER BY bang");
     break;
