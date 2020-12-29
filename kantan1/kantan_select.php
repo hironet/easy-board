@@ -7,7 +7,8 @@
 </head>
 <body>
 <?php
-$s = new PDO("mysql:host=dev-db;dbname=easy-board;charset=utf8", "root", "root");
+require_once("data/db_info.php");
+$s = new PDO("mysql:host=$SERV;dbname=$DBNM;charset=utf8", $USER, $PASS);
 $re = $s->query("SELECT * FROM tbk ORDER BY bang");
 while ($kekka = $re->fetch()) {
   print $kekka[0];
