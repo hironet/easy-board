@@ -22,7 +22,11 @@ switch ("$h_d") {
     break;
   case "del":
     $b1_d = $_POST["b1"];
-    $s->query("DELETE FROM tbk WHERE bang = $b1_d");
+    if (preg_match("/[^0-9]/", $b1_d)) {
+      print "<div style='color:red'>数字以外は入力しないで！！</div>";
+    } else {
+      $s->query("DELETE FROM tbk WHERE bang=$b1_d");
+    }
     $re = $s->query("SELECT * FROM tbk ORDER BY bang");
     break;
   case "ser":
