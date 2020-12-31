@@ -1,7 +1,7 @@
 <?php
 require_once("data/db_info.php");
 
-$s = new PDO("mysql:host=$SERV;dbname=$DBNM;charset=utf8", $USER, $PASS);
+$s = new PDO("mysql:host=$SERV;dbname=$DBNM;charset=utf8mb4", $USER, $PASS);
 
 $gu_d = $_GET["gu"];
 

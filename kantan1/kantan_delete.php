@@ -8,7 +8,7 @@
 <body>
 <?php
 require_once("data/db_info.php");
-$s = new PDO("mysql:host=$SERV;dbname=$DBNM;charset=utf8", $USER, $PASS);
+$s = new PDO("mysql:host=$SERV;dbname=$DBNM;charset=utf8mb4", $USER, $PASS);
 $b1_d = $_POST["b1"];
 if (preg_match("/[^0-9]/", $b1_d)) {
   print "<div style='color:red'>数字以外は入力しないで！！</div>";
